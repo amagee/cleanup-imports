@@ -110,7 +110,7 @@ def print_used_imports(path):
                 'source': imp['source']
             }
             if transformed_import['locals'] != []:
-                print_import(imp)
+                print_import(transformed_import)
 
 
 if __name__ == "__main__":
