@@ -1,0 +1,23 @@
+{
+  "name": "cleanup-imports",
+  "version": "1.0.0",
+  "description": "",
+  "main": "parse.js",
+  "dependencies": {
+    "esprima": "^2.7.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amagee/cleanup-imports.git"
+  },
+  "author": "Andrew Magee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amagee/cleanup-imports/issues"
+  },
+  "homepage": "https://github.com/amagee/cleanup-imports#readme"
+}
