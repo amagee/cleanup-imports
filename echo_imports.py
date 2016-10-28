@@ -1,6 +1,7 @@
 import sys
 import json
 import subprocess
+import os
 import re
 
 
@@ -22,14 +23,15 @@ def get_unused_names(path):
 
 
 def parse_imports(path):
+    script_dir = os.path.dirname(os.path.realpath(__file__))
     p = subprocess.Popen(
-        ["node", "parse.js", path],
+        ["node", os.path.join(script_dir, "parse.js"), path],
         stdin=subprocess.PIPE,
         stdout=subprocess.PIPE
     )
-    stdout_data, stderr_data = p.communicate()
+    stdout_data, stderr_data = p.communicate(open(path, 'rb').read())
 
-    tree = json.loads(open("out.json").read())
+    tree = json.loads(stdout_data.decode())
     imports = []
 
     for e in tree["body"]:
